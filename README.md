@@ -19,4 +19,6 @@ This project aims to analyze the NEET examination data from the official website
 2. `cent_data.csv`: This file contains the state, city, and center name with its serial number
 
 The purpose of this project is to study and find any malpractice and fraud across examination centers. The analysis is done using the downloaded data and the code in the `neet_analysis` folder.
+## Requirements
 
+`pip install pymupdf pandas matplotlib numpy seaborn scipy scikit-learn`
