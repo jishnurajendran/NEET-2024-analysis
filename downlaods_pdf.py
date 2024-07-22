@@ -1,9 +1,8 @@
 import requests
 import pandas as pd
 
-# Base URLs
+# Base URL
 base_url = "https://neet.ntaonline.in/frontend/web/common-scorecard/getdataresult"
-pdf_base_url = "https://neetfs.ntaonline.in/NEET_2024_Result/"
 
 # Parameters for the AJAX request (initial load)
 params = {
@@ -18,7 +17,7 @@ params = {
     "order[0][column]": 0,
     "order[0][dir]": "asc",
     "start": 0,
-    "length": 100000,  # number of requests, Large number to fetch all entries
+    "length": 100000,  # Large number to fetch all entries
     "search[value]": "",
     "search[regex]": False
 }
@@ -27,18 +26,22 @@ params = {
 response = requests.get(base_url, params=params)
 data = response.json()
 
-# Extract the CENTNO values
-centnos = [row['CENTNO'] for row in data['data']]
+# Extract the necessary columns
+rows = []
+for item in data['data']:
+    row = {
+        "CENTNO": item['CENTNO'],
+        "CENT_STATE": item['CENT_STATE'],
+        "CENT_CITY": item['CENT_CITY'],
+        "CENT_NAME": item['CENT_NAME']
+    }
+    rows.append(row)
 
-# Download the PDFs
-for centno in centnos:
-    pdf_url = f"{pdf_base_url}{centno}.pdf"
-    pdf_response = requests.get(pdf_url)
-    if pdf_response.status_code == 200:
-        with open(f"{centno}.pdf", 'wb') as file:
-            file.write(pdf_response.content)
-        print(f"Downloaded: {centno}.pdf")
-    else:
-        print(f"Failed to download: {centno}.pdf")
+# Create a DataFrame
+df = pd.DataFrame(rows)
 
-print("Completed downloading PDFs.")
+# Save to CSV
+csv_file_path = "cent_data.csv"
+df.to_csv(csv_file_path, index=False)
+
+print(f"Data saved to {csv_file_path}")
