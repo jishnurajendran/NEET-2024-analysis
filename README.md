@@ -1,6 +1,6 @@
 # NEET Examination Analysis
 
-This project aims to analyze the NEET examination data from the official website. The data includes marks obtained by students in various centers. The project includes the following files:
+This project aims to analyze the NEET examination data from the [official website](https://neet.ntaonline.in/frontend/web/common-scorecard/index). The data includes marks obtained by students in various centers. The project includes the following files:
 
 ## Scripts and Notebooks
 
