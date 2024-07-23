@@ -22,3 +22,15 @@ The purpose of this project is to study and find any malpractice and fraud acros
 ## Requirements
 
 `pip install pymupdf pandas matplotlib numpy seaborn scipy scikit-learn`
+
+## Contributing
+
+We welcome pull requests and contributions to improve the NEET Examination Analysis project. If you have suggestions for improvements or new analysis, feel free to submit a pull request or open an issue. Contributions should follow the standard workflow:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and commit them.
+4. Push the changes to your fork.
+5. Submit a pull request to the main project.
+
+We appreciate your efforts to contribute and improve upon this project!
