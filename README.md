@@ -34,3 +34,7 @@ We welcome pull requests and contributions to improve the NEET Examination Analy
 5. Submit a pull request to the main project.
 
 We appreciate your efforts to contribute and improve upon this project!
+
+![comicinfo](imgs/comic.jpg "by R Prasad") 
+
+by [R Prasad](https://x.com/rprasad66)
